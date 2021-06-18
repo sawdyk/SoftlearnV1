@@ -1,0 +1,39 @@
+version: '2'
+services:
+  api:
+    container_name: 'expertplat_api'
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: always 
+    ports:
+      - '54023:80'
+      - '44392:443'
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_HTTPS_PORT=44392
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=Password123
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/expertplat.pfx
+    volumes:
+      - ./https/expertplat.pfx:/https/expertplat.pfx:ro
+      - '/root/SoftLearnFilesRepository/CourseDocuments/CourseCategoryImages:/app/wwwroot/CourseDocuments/CourseCategoryImages'
+      - '/root/SoftLearnFilesRepository/CourseDocuments/CourseImages:/app/wwwroot/CourseDocuments/CourseImages'
+      - '/root/SoftLearnFilesRepository/CourseDocuments/Documents:/app/wwwroot/CourseDocuments/Documents'
+      - '/root/SoftLearnFilesRepository/CourseDocuments/ProfilePictures:/app/wwwroot/CourseDocuments/ProfilePictures'
+      - '/root/SoftLearnFilesRepository/CourseDocuments/Videos:/app/wwwroot/CourseDocuments/Videos'
+      - '/root/SoftLearnFilesRepository/SchoolDocuments/Assignments:/app/wwwroot/SchoolDocuments/Assignments'
+      - '/root/SoftLearnFilesRepository/SchoolDocuments/LessonNotes:/app/wwwroot/SchoolDocuments/LessonNotes'
+      - '/root/SoftLearnFilesRepository/SchoolDocuments/Others:/app/wwwroot/SchoolDocuments/Others'
+      - '/root/SoftLearnFilesRepository/SchoolDocuments/SchoolLogos:/app/wwwroot/SchoolDocuments/SchoolLogos'
+      - '/root/SoftLearnFilesRepository/SchoolDocuments/Signatures:/app/wwwroot/SchoolDocuments/Signatures'
+      - '/root/SoftLearnFilesRepository/SchoolDocuments/StudentPassports:/app/wwwroot/SchoolDocuments/StudentPassports'
+      - '/root/SoftLearnFilesRepository/SchoolDocuments/SubjectNotes:/app/wwwroot/SchoolDocuments/SubjectNotes'
+
+
+
+
+     
+  
+   
+

@@ -1,0 +1,70 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DataSeed\SchoolPaymentMethodsSeedData.cs" />
+    <Compile Remove="DataSeed\SuperAdminSeedData.cs" />
+    <Compile Remove="Migrations\20201209124037_foreignKeyMigration.cs" />
+    <Compile Remove="Migrations\20201209124037_foreignKeyMigration.Designer.cs" />
+    <Compile Remove="Migrations\20201210033711_FeeMigration.cs" />
+    <Compile Remove="Migrations\20201210033711_FeeMigration.Designer.cs" />
+    <Compile Remove="Migrations\20201210034114_FeeMigration.cs" />
+    <Compile Remove="Migrations\20201210034114_FeeMigration.Designer.cs" />
+    <Compile Remove="Migrations\20201210034349_FeeMigration.cs" />
+    <Compile Remove="Migrations\20201210034349_FeeMigration.Designer.cs" />
+    <Compile Remove="Migrations\20201210034713_FeeMigration.cs" />
+    <Compile Remove="Migrations\20201210034713_FeeMigration.Designer.cs" />
+    <Compile Remove="Migrations\20201210035437_FeeMigration.cs" />
+    <Compile Remove="Migrations\20201210035437_FeeMigration.Designer.cs" />
+    <Compile Remove="Migrations\20201210040541_FeeMigration.cs" />
+    <Compile Remove="Migrations\20201210040541_FeeMigration.Designer.cs" />
+    <Compile Remove="Migrations\20201210083128_FeeMigration.cs" />
+    <Compile Remove="Migrations\20201210083128_FeeMigration.Designer.cs" />
+    <Compile Remove="Migrations\20201210083306_FeeMigration.cs" />
+    <Compile Remove="Migrations\20201210083306_FeeMigration.Designer.cs" />
+    <Compile Remove="Migrations\20210309121744_ReportCardConfig3.cs" />
+    <Compile Remove="Migrations\20210309121744_ReportCardConfig3.Designer.cs" />
+    <Compile Remove="Migrations\20210309141439_ReportCardConfig3.3.cs" />
+    <Compile Remove="Migrations\20210309141439_ReportCardConfig3.3.Designer.cs" />
+    <Compile Remove="Migrations\20210310115122_updatedScoreCategory2.cs" />
+    <Compile Remove="Migrations\20210310115122_updatedScoreCategory2.Designer.cs" />
+    <Compile Remove="RequestModels\CourseTopicQuizQuestionsRequestModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="InterfaceRepositories\IReportsRepo.cs~RF2511326.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Automapper" Version="10.1.1" />
+    <PackageReference Include="ByteSize" Version="2.0.0" />
+    <PackageReference Include="CloudinaryDotNet" Version="1.12.0" />
+    <PackageReference Include="EPPlus" Version="4.5.2.1" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="NETCore.MailKit" Version="2.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.2.0" />
+    <PackageReference Include="SixLabors.ImageSharp" Version="1.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1" />
+    <PackageReference Include="Xabe.FFmpeg" Version="4.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="TempFileUpload\" />
+    <Folder Include="wwwroot\EmailTemplate\Images\" />
+  </ItemGroup>
+
+</Project>

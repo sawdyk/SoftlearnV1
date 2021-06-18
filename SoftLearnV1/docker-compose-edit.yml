@@ -1,0 +1,29 @@
+version: '2'
+services:
+  web:
+    container_name: 'fmda_frontend_prod'
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: always 
+    ports:
+      - '80:3033'
+    volumes:
+      - ./https/expertplat.pfx:/https/expertplat.pfx:ro
+      - '//c/SoftLearnFilesRepository/CourseDocuments/CourseCategoryImages:/app/wwwroot/CourseDocuments/CourseCategoryImages'
+      - '//c/SoftLearnFilesRepository/CourseDocuments/CourseImages:/app/wwwroot/CourseDocuments/CourseImages'
+      - '//c/SoftLearnFilesRepository/CourseDocuments/Documents:/app/wwwroot/CourseDocuments/Documents'
+      - '//c/SoftLearnFilesRepository/CourseDocuments/ProfilePictures:/app/wwwroot/CourseDocuments/ProfilePictures'
+      - '//c/SoftLearnFilesRepository/CourseDocuments/Videos:/app/wwwroot/CourseDocuments/Videos'
+      - '//c/SoftLearnFilesRepository/SchoolDocuments/Assignments:/app/wwwroot/SchoolDocuments/Assignments'
+      - '//c/SoftLearnFilesRepository/SchoolDocuments/LessonNotes:/app/wwwroot/SchoolDocuments/LessonNotes'
+      - '//c/SoftLearnFilesRepository/SchoolDocuments/Others:/app/wwwroot/SchoolDocuments/Others'
+      - '//c/SoftLearnFilesRepository/SchoolDocuments/SchoolLogos:/app/wwwroot/SchoolDocuments/SchoolLogos'
+      - '//c/SoftLearnFilesRepository/SchoolDocuments/Signatures:/app/wwwroot/SchoolDocuments/Signatures'
+      - '//c/SoftLearnFilesRepository/SchoolDocuments/StudentPassports:/app/wwwroot/SchoolDocuments/StudentPassports'
+      - '//c/SoftLearnFilesRepository/SchoolDocuments/SubjectNotes:/app/wwwroot/SchoolDocuments/SubjectNotes'
+
+     
+  
+   
+
